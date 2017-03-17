@@ -1,0 +1,7 @@
+---
+jolokia_version: 1.3.5
+jolokia_file_name: "jolokia-{{ jolokia_version }}-bin.zip"
+jolokia_url: "https://github.com/rhuss/jolokia/releases/download/v{{ jolokia_version }}/{{ jolokia_file_name }}"
+jolokia_dest_dir: /opt/
+jolokia_user: root
+jolokia_group: root

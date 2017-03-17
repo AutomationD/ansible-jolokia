@@ -1,0 +1,16 @@
+---
+# tasks file for ansible-jolokia
+- name: Download the archive
+  get_url:
+    url: "{{ jolokia_url }}"
+    dest: "/opt/{{ jolokia_file_name }}"
+    timeout: 30
+
+- name: Extract the archive
+  unarchive:
+    src: "/opt/{{ jolokia_file_name }}"
+    dest: "{{ jolokia_dest_dir }}"
+    owner: "{{ jolokia_user }}"
+    group: "{{ jolokia_group}}"
+    copy: no
+    creates: "{{ jolokia_dest_dir }}"

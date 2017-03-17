@@ -1,0 +1,30 @@
+galaxy_info:
+  author: Dmitry Kireev
+  description: Role to install Jolokia - JMX http interface
+
+  license: MIT
+
+  min_ansible_version: 2.0
+
+  platforms:
+
+  - name: Amazon
+    versions:
+    - all
+    - 2013.03
+    - 2013.09
+    - 2016.03
+    - 2016.09
+
+  - name: Ubuntu
+    versions:
+    - all
+
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags: []
+
+
+dependencies: []
