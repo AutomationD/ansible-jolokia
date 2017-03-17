@@ -9,8 +9,21 @@
 - name: Extract the archive
   unarchive:
     src: "/opt/{{ jolokia_file_name }}"
-    dest: "{{ jolokia_dest_dir }}"
+    dest: "{{ jolokia_parent_dir }}"
     owner: "{{ jolokia_user }}"
     group: "{{ jolokia_group}}"
     copy: no
-    creates: "{{ jolokia_dest_dir }}"
+    creates: "{{ jolokia_dir_name }}"
+
+- name: Symlink install directory
+  file:
+    src: "{{ jolokia_parent_dir }}/{{ jolokia_dir_name }}/"
+    path: "{{ jolokia_dir }}"
+    state: link
+
+- name: Set permissions to the folder
+  file:
+    path: "{{ jolokia_dir }}/"
+    owner: "{{ jolokia_user }}"
+    group: "{{ jolokia_group }}"
+    recurse: yes
