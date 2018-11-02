@@ -1,5 +1,10 @@
 ---
-# tasks file for ansible-jolokia
+- name: Create directory
+  file:
+    dest: "{{ jolokia_parent_dir }}"
+    mode: 0755
+    state: directory
+
 - name: Download the archive
   get_url:
     url: "{{ jolokia_url }}"
